@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Créer un événement — Lenz</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="navbar" id="navbar"></div>
+
+  <div class="form-card" style="max-width:640px;">
+    <h2>Créer un événement</h2>
+    <div id="alertBox"></div>
+    <form id="createForm">
+      <div class="form-group">
+        <label>Titre *</label>
+        <input type="text" name="title" required placeholder="ex. Finale de basket 2026" />
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <textarea name="description" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Date de l'événement</label>
+        <input type="datetime-local" name="eventDate" />
+      </div>
+      <div class="form-group">
+        <label>URL de l'image de couverture</label>
+        <input type="text" name="coverImage" placeholder="https://…" />
+      </div>
+
+      <h3 style="margin-top:24px;">Règles de l'événement</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Max photos / personne</label>
+          <input type="number" name="maxPhotosPerPerson" value="3" min="1" required />
+        </div>
+        <div class="form-group">
+          <label>Max contributeurs</label>
+          <input type="number" name="maxContributors" value="30" min="1" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Max photos au total</label>
+        <input type="number" name="maxTotalPhotos" value="100" min="1" required />
+      </div>
+
+      <h3 style="margin-top:24px;">Cycle de vie</h3>
+      <div class="form-group">
+        <label>Ouverture (début du dépôt) *</label>
+        <input type="datetime-local" name="openAt" required />
+      </div>
+      <div class="form-group">
+        <label>Fermeture (fin du dépôt) *</label>
+        <input type="datetime-local" name="closeAt" required />
+      </div>
+      <div class="form-group">
+        <label>Fin du vote *</label>
+        <input type="datetime-local" name="voteEndAt" required />
+      </div>
+
+      <button class="btn btn-primary" type="submit" style="width:100%; margin-top:8px;">
+        Créer l'événement
+      </button>
+    </form>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/create-event.js"></script>
+</body>
+</html>

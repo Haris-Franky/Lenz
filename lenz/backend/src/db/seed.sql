@@ -1,0 +1,3 @@
+-- Données d'exemple pour tester rapidement
+-- Mot de passe en clair pour tous les comptes de démo : "password123"
+-- (le hash ci-dessous est généré au moment du seed.js, pas ici)
