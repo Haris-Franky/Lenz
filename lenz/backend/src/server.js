@@ -38,5 +38,10 @@ app.listen(PORT, () => {
 
 const path = require('path');
 
-// Sert le dossier frontend
-app.use(express.static(path.join(__dirname, '../../../frontend')));
+// Remonte de src/ (1) -> backend/ (2) -> lenz/ -> pointe vers frontend/
+app.use(express.static(path.join(__dirname, '../../frontend')));
+
+// Route par défaut pour rediriger vers index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../frontend/index.html'));
+});
