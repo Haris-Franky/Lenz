@@ -35,3 +35,8 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Lenz API démarrée sur http://localhost:${PORT}`);
 });
+
+const path = require('path');
+
+// Sert le dossier frontend
+app.use(express.static(path.join(__dirname, '../../frontend')));
