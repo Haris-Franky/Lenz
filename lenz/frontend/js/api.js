@@ -1,5 +1,5 @@
 
-const API_URL = "https://lenz-backend-x7eh.onrender.com";
+const API_BASE = "https://lenz-backend-x7eh.onrender.com/api";
 
 function getToken() {
   return localStorage.getItem('lenz_token');
