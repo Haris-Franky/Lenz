@@ -36,12 +36,3 @@ app.listen(PORT, () => {
   console.log(`Lenz API démarrée sur http://localhost:${PORT}`);
 });
 
-const path = require('path');
-
-// Remonte de src/ (1) -> backend/ (2) -> lenz/ -> pointe vers frontend/
-app.use(express.static(path.join(__dirname, '../../frontend')));
-
-// Route par défaut pour rediriger vers index.html
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../frontend/index.html'));
-});
